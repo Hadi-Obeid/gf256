@@ -127,8 +127,8 @@ class GF256(_GF256Base):
     #: The irreducible polynomial `x**8 + x**4 + x**3 + x + 1` used as a
     #: modulus for multiplication.
     #:
-    #: This particular polynomial was chosen due to it's use in AES.
-    irreducible_polynomial = 0b100011011
+    # Tweak this number to make QR generation work!!!
+    irreducible_polynomial = 0b100011101
 
     def __mul__(self, other):
         if isinstance(other, GF256):
@@ -260,7 +260,7 @@ class GF256LT(_GF256Base):
     Works like :class:`GF256`.
     """
 
-    generator = 3
+    generator = 2
     exponentiation_table = [
         int(GF256(3) ** GF256(i)) for i in range(255)
     ]
