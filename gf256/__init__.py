@@ -262,7 +262,7 @@ class GF256LT(_GF256Base):
 
     generator = 2
     exponentiation_table = [
-        int(GF256(3) ** GF256(i)) for i in range(255)
+        int(GF256(2) ** GF256(i)) for i in range(255)
     ]
     logarithm_table = [
         logarithm
